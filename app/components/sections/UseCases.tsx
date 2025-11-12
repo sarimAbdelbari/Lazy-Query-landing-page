@@ -61,13 +61,13 @@ export default function UseCases() {
               className="glass-card p-8"
             >
               <div className="flex items-start space-x-4">
-                <div className="icon-container flex-shrink-0">
-                  <useCase.icon className="w-6 h-6 text-cyan" />
+                <div className="icon-container shrink-0">
+                  <useCase.icon className="w-6 h-6" style={{ color: 'var(--primary-300)' }} />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2">{useCase.title}</h3>
                   <p className="text-white/70 mb-3">{useCase.description}</p>
-                  <p className="text-sm text-cyan font-medium">
+                  <p className="text-sm font-medium" style={{ color: 'var(--primary-300)' }}>
                     ✓ {useCase.benefit}
                   </p>
                 </div>

@@ -62,7 +62,7 @@ export default function FeaturesGrid() {
   ];
 
   return (
-    <section id="features" className="section-padding px-6 bg-[#111111]/50">
+    <section id="features" className="section-padding px-6" style={{ background: 'var(--bg-secondary)' }}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -93,7 +93,7 @@ export default function FeaturesGrid() {
               className="glass-card p-8"
             >
               <div className="icon-container mb-6">
-                <feature.icon className="w-6 h-6 text-purple-blue" />
+                <feature.icon className="w-6 h-6" style={{ color: 'var(--primary-400)' }} />
               </div>
               
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
@@ -132,7 +132,10 @@ export default function FeaturesGrid() {
                   href={feature.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-purple-blue hover:text-deep-purple transition-colors text-sm font-medium mt-2"
+                  className="inline-flex items-center space-x-2 transition-colors text-sm font-medium mt-2"
+                  style={{ color: 'var(--primary-400)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-300)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--primary-400)'}
                 >
                   <span>{feature.cta.text}</span>
                   <ArrowRight className="w-4 h-4" />

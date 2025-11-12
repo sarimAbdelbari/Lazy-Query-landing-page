@@ -24,7 +24,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             className="flex justify-center"
           >
             <Badge className="inline-flex items-center space-x-2">
-              <Sparkles className="w-4 h-4 text-cyan" />
+              <Sparkles className="w-4 h-4" style={{ color: 'var(--primary-300)' }} />
               <span>Now supporting Prisma, SQL, PostgreSQL & JSON</span>
             </Badge>
           </motion.div>
@@ -94,7 +94,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             className="mt-12 md:mt-16"
           >
             <div className="product-frame animate-float">
-              <div className="relative aspect-video bg-gradient-to-br from-purple-blue/20 to-cyan/20 rounded-lg overflow-hidden">
+              <div className="relative aspect-video rounded-lg overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(0, 82, 125, 0.2) 0%, rgba(0, 20, 119, 0.2) 100%)' }}>
                 {/* Placeholder for product screenshot */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <p className="text-white/40 text-sm font-mono">

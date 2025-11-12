@@ -60,7 +60,7 @@ export default function HowItWorks() {
               className="glass-card p-8"
             >
               <div className="icon-container mb-6">
-                <step.icon className="w-6 h-6 text-purple-blue" />
+                <step.icon className="w-6 h-6" style={{ color: 'var(--primary-400)' }} />
               </div>
               <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
               <p className="text-white/70 leading-relaxed">{step.description}</p>

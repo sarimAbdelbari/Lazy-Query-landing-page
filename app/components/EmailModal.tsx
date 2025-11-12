@@ -96,8 +96,8 @@ export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-8"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
-                  <CheckCircle className="w-8 h-8 text-green-500" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ background: 'rgba(0, 82, 125, 0.2)' }}>
+                  <CheckCircle className="w-8 h-8" style={{ color: 'var(--primary-400)' }} />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">You're on the list!</h3>
                 <p className="text-white/70">
@@ -108,8 +108,8 @@ export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
               /* Form State */
               <>
                 <div className="mb-6">
-                  <div className="w-12 h-12 mb-4 rounded-full bg-purple-blue/20 flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-purple-blue" />
+                  <div className="w-12 h-12 mb-4 rounded-full flex items-center justify-center" style={{ background: 'rgba(0, 82, 125, 0.2)' }}>
+                    <Mail className="w-6 h-6" style={{ color: 'var(--primary-400)' }} />
                   </div>
                   <h2 className="text-2xl font-bold mb-2">Join the Waitlist</h2>
                   <p className="text-white/70">
@@ -129,7 +129,11 @@ export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="John Doe"
                       disabled={status === "loading"}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-purple-blue transition-colors disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none transition-colors disabled:opacity-50"
+                      style={{ focusBorderColor: 'var(--primary-400)' }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = 'var(--primary-400)'}
+                      onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
+
                     />
                   </div>
 
@@ -145,7 +149,11 @@ export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
                       placeholder="you@example.com"
                       required
                       disabled={status === "loading"}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-purple-blue transition-colors disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none transition-colors disabled:opacity-50"
+                      style={{ focusBorderColor: 'var(--primary-400)' }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = 'var(--primary-400)'}
+                      onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
+
                     />
                   </div>
 

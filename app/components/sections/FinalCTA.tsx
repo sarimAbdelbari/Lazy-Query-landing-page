@@ -20,7 +20,7 @@ export default function FinalCTA({ onOpenWaitlist }: FinalCTAProps) {
           className="relative"
         >
           {/* Gradient Border Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-blue via-cyan to-purple-blue rounded-2xl blur-xl opacity-30"></div>
+          <div className="absolute inset-0 rounded-2xl blur-xl opacity-30" style={{ background: 'linear-gradient(90deg, var(--primary-500) 0%, var(--secondary-400) 50%, var(--primary-500) 100%)' }}></div>
           
           <div className="relative glass-card p-12 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
