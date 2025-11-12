@@ -40,10 +40,10 @@ export default function UseCases() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             Built for{" "}
             <GradientText>developers who value clarity</GradientText>
           </h2>
@@ -54,22 +54,56 @@ export default function UseCases() {
           {useCases.map((useCase, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-8"
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.12,
+                ease: "easeOut"
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(0, 82, 125, 0.25)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="glass-card p-8 cursor-pointer group"
             >
               <div className="flex items-start space-x-4">
-                <div className="icon-container shrink-0">
+                <motion.div
+                  className="icon-container shrink-0"
+                  whileHover={{
+                    scale: 1.15,
+                    rotate: 10,
+                    transition: { type: "spring", stiffness: 400 }
+                  }}
+                >
                   <useCase.icon className="w-6 h-6" style={{ color: 'var(--primary-300)' }} />
-                </div>
+                </motion.div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2">{useCase.title}</h3>
-                  <p className="text-white/70 mb-3">{useCase.description}</p>
-                  <p className="text-sm font-medium" style={{ color: 'var(--primary-300)' }}>
-                    ✓ {useCase.benefit}
+                  <motion.h3
+                    className="text-xl font-semibold mb-2 group-hover:text-[var(--primary-300)] transition-colors"
+                  >
+                    {useCase.title}
+                  </motion.h3>
+                  <p className="text-white/70 mb-3 leading-relaxed">
+                    {useCase.description}
                   </p>
+                  <motion.p
+                    className="text-sm font-medium inline-flex items-center gap-2"
+                    style={{ color: 'var(--primary-300)' }}
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                  >
+                    <motion.span
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      ✓
+                    </motion.span>
+                    {useCase.benefit}
+                  </motion.p>
                 </div>
               </div>
             </motion.div>
@@ -79,4 +113,3 @@ export default function UseCases() {
     </section>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import AnimatedBackground from "./components/AnimatedBackground";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
@@ -14,23 +15,29 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen w-full">
-      <Navbar />
+    <div className="min-h-screen w-full relative">
+      {/* Animated Background - Behind Everything */}
+      <AnimatedBackground />
       
-      <main>
-        <Hero onOpenWaitlist={() => setIsModalOpen(true)} />
-        <HowItWorks />
-        <FeaturesGrid />
-        <UseCases />
-        <FinalCTA onOpenWaitlist={() => setIsModalOpen(true)} />
-      </main>
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Navbar />
+        
+        <main>
+          <Hero onOpenWaitlist={() => setIsModalOpen(true)} />
+          <HowItWorks />
+          <FeaturesGrid />
+          <UseCases />
+          <FinalCTA onOpenWaitlist={() => setIsModalOpen(true)} />
+        </main>
 
-      <Footer />
+        <Footer />
 
-      <EmailModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+        <EmailModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      </div>
     </div>
   );
 }

@@ -115,7 +115,7 @@ body {
 }
 
 .glass-nav {
-  background: rgba(0, 10, 20, 0.8);
+  background: rgba(3, 20, 37, 0.918);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -215,17 +215,73 @@ body {
   font-size: 0.75rem;
 }
 
-/* Section Spacing */
+/* Section Spacing - Improved Vertical Rhythm */
 .section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}
+
+/* Typography Utilities - Fikrat.tech Inspired */
+.heading-1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.heading-3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.body-lg {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.body-md {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Improved Letter Spacing */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Better Line Heights */
+p {
+  line-height: 1.7;
+}
+
+/* Smooth Transitions */
+* {
+  transition-property: color, background-color, border-color, transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
 }
 
 /* Animations */

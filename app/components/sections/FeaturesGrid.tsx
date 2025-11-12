@@ -69,13 +69,19 @@ export default function FeaturesGrid() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-wider text-white/60 mb-4">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-sm uppercase tracking-wider text-white/60 mb-4"
+          >
             FEATURES
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          </motion.p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             Everything you need to{" "}
             <GradientText>master your database</GradientText>
           </h2>
@@ -86,17 +92,39 @@ export default function FeaturesGrid() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="glass-card p-8"
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.08,
+                ease: "easeOut"
+              }}
+              whileHover={{
+                scale: 1.03,
+                y: -5,
+                boxShadow: "0 15px 35px rgba(0, 82, 125, 0.2)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="glass-card p-8 cursor-pointer group"
             >
-              <div className="icon-container mb-6">
+              <motion.div
+                className="icon-container mb-6"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: [0, -10, 10, -10, 0],
+                  transition: { 
+                    rotate: { duration: 0.5 },
+                    scale: { duration: 0.2 }
+                  }
+                }}
+              >
                 <feature.icon className="w-6 h-6" style={{ color: 'var(--primary-400)' }} />
-              </div>
+              </motion.div>
               
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-[var(--primary-300)] transition-colors">
+                {feature.title}
+              </h3>
               
               <p className="text-white/70 leading-relaxed mb-4">
                 {feature.description}
@@ -106,29 +134,53 @@ export default function FeaturesGrid() {
               {feature.badges && (
                 <div className="flex flex-wrap gap-2 mb-4">
                   {feature.badges.map((badge, i) => (
-                    <Badge key={i} variant="mono">
-                      {badge}
-                    </Badge>
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 + i * 0.05 }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <Badge variant="mono">{badge}</Badge>
+                    </motion.div>
                   ))}
                 </div>
               )}
 
               {/* Keyboard Shortcut */}
-              {feature.highlight && <div className="mb-4">{feature.highlight}</div>}
+              {feature.highlight && (
+                <motion.div 
+                  className="mb-4"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {feature.highlight}
+                </motion.div>
+              )}
 
               {/* Relationship Colors */}
               {feature.relationColors && (
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge className="relation-badge-1n">1:N</Badge>
-                  <Badge className="relation-badge-mn">M:N</Badge>
-                  <Badge className="relation-badge-n1">N:1</Badge>
-                  <Badge className="relation-badge-11">1:1</Badge>
+                  {["1:N", "M:N", "N:1", "1:1"].map((rel, i) => (
+                    <motion.div
+                      key={rel}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 + i * 0.05 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      <Badge className={`relation-badge-${rel.toLowerCase().replace(':', '')}`}>
+                        {rel}
+                      </Badge>
+                    </motion.div>
+                  ))}
                 </div>
               )}
 
               {/* CTA */}
               {feature.cta && (
-                <a
+                <motion.a
                   href={feature.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -136,10 +188,16 @@ export default function FeaturesGrid() {
                   style={{ color: 'var(--primary-400)' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-300)'}
                   onMouseLeave={(e) => e.currentTarget.style.color = 'var(--primary-400)'}
+                  whileHover={{ x: 5 }}
                 >
                   <span>{feature.cta.text}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                  <motion.div
+                    animate={{ x: [0, 3, 0] }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.div>
+                </motion.a>
               )}
             </motion.div>
           ))}
@@ -148,4 +206,3 @@ export default function FeaturesGrid() {
     </section>
   );
 }
-

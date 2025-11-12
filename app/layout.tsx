@@ -18,6 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "LazyQuery - Transform Database Schemas into Interactive Diagrams",
   description: "Upload .sql, .prisma, .json, or .psql files and visualize your database structure in seconds. Free, open-source schema visualization tool.",
+  icons: {
+    icon: "/assets/Logo transparent.svg"
+  },
 };
 
 export default function RootLayout({
