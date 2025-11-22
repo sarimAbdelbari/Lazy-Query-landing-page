@@ -8,7 +8,7 @@ import {
   GitBranch,
   Filter,
   Download,
-  ArrowRight,
+  ExternalLink,
   Sparkles,
 } from "lucide-react";
 import GradientText from "../ui/GradientText";
@@ -197,7 +197,7 @@ export default function FeaturesGrid() {
                     animate={{ x: [0, 3, 0] }}
                     transition={{ duration: 1, repeat: Infinity }}
                   >
-                    <ArrowRight className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
                   </motion.div>
                 </motion.a>
               )}

@@ -10,6 +10,7 @@ import FeaturesGrid from "./components/sections/FeaturesGrid";
 import UseCases from "./components/sections/UseCases";
 import FinalCTA from "./components/sections/FinalCTA";
 import EmailModal from "./components/EmailModal";
+import FixedCTA from "./components/ui/FixedCTA";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,6 +38,9 @@ export default function Home() {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
+        
+        {/* Fixed CTA Button */}
+        <FixedCTA />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Play, Mail } from "lucide-react";
 import GradientText from "../ui/GradientText";
 
 interface FinalCTAProps {
@@ -98,8 +98,8 @@ export default function FinalCTA({ onOpenWaitlist }: FinalCTAProps) {
                 }}
                 whileTap={{ scale: 0.98 }}
               >
+                <Play className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span>Try Demo Now</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <motion.button
                 onClick={onOpenWaitlist}
@@ -107,6 +107,7 @@ export default function FinalCTA({ onOpenWaitlist }: FinalCTAProps) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
+                <Mail className="w-4 h-4" />
                 <span>Join Waitlist</span>
               </motion.button>
             </motion.div>

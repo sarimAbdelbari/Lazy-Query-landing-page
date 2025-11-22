@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Sparkles, Zap, Database, Code, Search } from "lucide-react";
+import { Play, Sparkles, Zap, Database, Code, Search, Mail } from "lucide-react";
 import GradientText from "../ui/GradientText";
 import Badge from "../ui/Badge";
 import AnimatedCounter from "../ui/AnimatedCounter";
@@ -105,8 +105,8 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 82, 125, 0.4)" }}
               whileTap={{ scale: 0.98 }}
             >
+              <Play className="w-4 h-4 group-hover:scale-110 transition-transform" />
               <span>Try Live Demo</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.button
               onClick={onOpenWaitlist}
@@ -114,6 +114,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
+              <Mail className="w-4 h-4" />
               <span>Join Waitlist</span>
             </motion.button>
           </motion.div>
