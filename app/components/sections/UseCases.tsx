@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Database, Users, FileText } from "lucide-react";
+import { Code, Database, Users, FileText, Target } from "lucide-react";
 import GradientText from "../ui/GradientText";
 
 export default function UseCases() {
@@ -43,6 +43,16 @@ export default function UseCases() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center items-center w-fit mx-auto px-4 py-1.5 rounded-full bg-[var(--primary-500)]/15 backdrop-blur-md border border-[var(--primary-300)]/40 text-white text-sm font-medium mb-8"
+          >
+            <Target className="w-4 h-4 mr-2" style={{ color: 'var(--primary-300)' }} />
+            BUILT FOR DEVELOPERS
+          </motion.div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             Built for{" "}
             <GradientText>developers who value clarity</GradientText>

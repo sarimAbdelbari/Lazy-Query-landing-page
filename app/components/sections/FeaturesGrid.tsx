@@ -9,6 +9,7 @@ import {
   Filter,
   Download,
   ArrowRight,
+  Sparkles,
 } from "lucide-react";
 import GradientText from "../ui/GradientText";
 import Badge from "../ui/Badge";
@@ -27,7 +28,7 @@ export default function FeaturesGrid() {
       title: "Interactive ERD Diagrams",
       description: "Drag, zoom, and explore your schema with intuitive controls",
       badges: null,
-      cta: { text: "Try It", href: "https://lazy-query.vercel.app" },
+      cta: { text: "Try It", href: "https://lazy-query-prod.vercel.app" },
     },
     {
       icon: Command,
@@ -72,15 +73,16 @@ export default function FeaturesGrid() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-sm uppercase tracking-wider text-white/60 mb-4"
+            transition={{ duration: 0.6 }}
+            className="flex justify-center items-center w-fit mx-auto px-4 py-1.5 rounded-full bg-[var(--primary-500)]/15 backdrop-blur-md border border-[var(--primary-300)]/40 text-white text-sm font-medium mb-8"
           >
+            <Sparkles className="w-4 h-4 mr-2" style={{ color: 'var(--primary-300)' }} />
             FEATURES
-          </motion.p>
+          </motion.div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             Everything you need to{" "}
             <GradientText>master your database</GradientText>

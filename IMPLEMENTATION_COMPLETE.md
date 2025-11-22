@@ -225,7 +225,7 @@ vercel --prod
 
 ## 🔗 Important Links
 
-- **Live Product**: https://lazy-query.vercel.app
+- **Live Product**: https://lazy-query-prod.vercel.app
 - **GitHub Repo**: https://github.com/sarimAbdelbari/LazyQuery
 - **Strategy Doc**: `LANDING_PAGE_STRATEGY.md`
 - **Setup Guide**: `SHEETDB_SETUP.md`

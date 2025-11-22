@@ -5,7 +5,7 @@
 **Project Name**: LazyQuery Landing Page  
 **Purpose**: Lead magnet and waitlist page for LazyQuery database schema visualization tool  
 **Tech Stack**: Next.js 16, React 19, Tailwind CSS 4, Framer Motion, TypeScript  
-**Live Product**: https://lazy-query.vercel.app  
+**Live Product**: https://lazy-query-prod.vercel.app
 **GitHub**: https://github.com/sarimAbdelbari/LazyQuery
 
 ---
@@ -178,7 +178,7 @@ border-radius: 1rem
 - **Subtext**: Value proposition (1-2 sentences)
 - **Product Preview**: Screenshot placeholder with glassmorphism frame
   - Location to replace: Line ~104 in Hero.tsx
-- **Primary CTA**: "Try Live Demo" → https://lazy-query.vercel.app
+- **Primary CTA**: "Try Live Demo" → https://lazy-query-prod.vercel.app
 - **Secondary CTA**: "Join Waitlist" → Opens email modal
 - **Social Proof**: "Join 500+ developers visualizing databases"
 - **Format Badges**: `.prisma • .sql • .psql • .json`
@@ -526,7 +526,7 @@ Large:   1280px+   (xl)
 
 ## 🔗 External Links
 
-- **Live Demo**: https://lazy-query.vercel.app
+- **Live Demo**: https://lazy-query-prod.vercel.app
 - **GitHub Repo**: https://github.com/sarimAbdelbari/LazyQuery
 - **Twitter**: https://twitter.com/lazyquery (placeholder)
 - **LinkedIn**: (placeholder)

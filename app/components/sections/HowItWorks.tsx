@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Upload, Zap, Search } from "lucide-react";
+import { Upload, Zap, Search, Play } from "lucide-react";
 import GradientText from "../ui/GradientText";
 
 export default function HowItWorks() {
@@ -37,15 +37,16 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-sm uppercase tracking-wider text-white/60 mb-4"
+            transition={{ duration: 0.6 }}
+            className="flex justify-center items-center w-fit mx-auto px-4 py-1.5 rounded-full bg-[var(--primary-500)]/15 backdrop-blur-md border border-[var(--primary-300)]/40 text-white text-sm font-medium mb-8"
           >
+            <Play className="w-4 h-4 mr-2" style={{ color: 'var(--primary-300)' }} />
             HOW IT WORKS
-          </motion.p>
+          </motion.div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             From <GradientText>schema to clarity</GradientText> in seconds
           </h2>

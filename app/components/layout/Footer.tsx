@@ -35,7 +35,7 @@ export default function Footer() {
     { name: "Features", action: () => scrollToSection("features") },
     { name: "How It Works", action: () => scrollToSection("how-it-works") },
     { name: "GitHub", href: "https://github.com/sarimAbdelbari/LazyQuery" },
-    { name: "Live Demo", href: "https://lazy-query.vercel.app" },
+    { name: "Live Demo", href: "https://lazy-query-prod.vercel.app" },
   ];
 
   return (

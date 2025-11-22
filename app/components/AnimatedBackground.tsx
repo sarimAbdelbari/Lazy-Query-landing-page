@@ -6,17 +6,18 @@ import { useState } from "react";
 
 export default function AnimatedBackground() {
   // Generate particles with random positions and properties
+  // Optimized: Reduced particle count for better performance
   // Using useState with lazy initializer to avoid calling Math.random during render
   const [particles] = useState(() => {
-    const particleCount = 40;
+    const particleCount = 25; // Reduced from 40 for better performance
     return Array.from({ length: particleCount }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
+      size: Math.random() * 3 + 1.5, // Slightly smaller
       duration: Math.random() * 20 + 15,
       delay: Math.random() * 5,
-      xOffset: Math.random() * 20 - 10,
+      xOffset: Math.random() * 15 - 7.5, // Reduced movement range
     }));
   });
 
@@ -39,7 +40,7 @@ export default function AnimatedBackground() {
         }}
       />
 
-      {/* Floating Particles */}
+      {/* Floating Particles - Optimized for Performance */}
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
@@ -52,6 +53,8 @@ export default function AnimatedBackground() {
             background: "var(--primary-400)",
             opacity: 0.15,
             filter: "blur(1px)",
+            willChange: "transform, opacity",
+            transform: "translateZ(0)", // GPU acceleration
           }}
           animate={{
             y: [0, -30, 0],
@@ -111,15 +114,37 @@ export default function AnimatedBackground() {
         }}
       />
 
-      {/* Grid Pattern Overlay */}
+      {/* Enhanced Grid Pattern Overlay (Fikrat.tech Inspired) */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
-            linear-gradient(var(--primary-400) 1px, transparent 1px),
-            linear-gradient(90deg, var(--primary-400) 1px, transparent 1px)
+            linear-gradient(var(--primary-300) 1px, transparent 1px),
+            linear-gradient(90deg, var(--primary-300) 1px, transparent 1px)
           `,
-          backgroundSize: "50px 50px",
+          backgroundSize: "60px 60px",
+          backgroundPosition: "0 0",
+          willChange: "transform",
+        }}
+      />
+      
+      {/* Subtle animated grid overlay for depth */}
+      <motion.div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `
+            linear-gradient(var(--primary-200) 1px, transparent 1px),
+            linear-gradient(90deg, var(--primary-200) 1px, transparent 1px)
+          `,
+          backgroundSize: "120px 120px",
+        }}
+        animate={{
+          backgroundPosition: ["0 0", "60px 60px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
         }}
       />
     </div>

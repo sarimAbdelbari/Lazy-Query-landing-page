@@ -528,7 +528,7 @@ Free forever • No credit card • Open source
 
 ## Notes
 
-- Product URL: https://lazy-query.vercel.app
+- Product URL: https://lazy-query-prod.vercel.app
 - GitHub: https://github.com/sarimAbdelbari/LazyQuery
 - Design inspiration: Modern SaaS dark mode (Vercel, Linear, Luro AI)
 - Target audience: Developers, database architects, technical teams

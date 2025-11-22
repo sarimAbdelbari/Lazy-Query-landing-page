@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Database, Code, Search } from "lucide-react";
 import GradientText from "../ui/GradientText";
 import Badge from "../ui/Badge";
 import AnimatedCounter from "../ui/AnimatedCounter";
+import ParticleGlow from "../ui/ParticleGlow";
+import FeatureBadge from "../ui/FeatureBadge";
 
 interface HeroProps {
   onOpenWaitlist: () => void;
@@ -71,6 +73,19 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             seconds — no installs, no extensions, just clarity.
           </motion.p>
 
+          {/* Feature Badges (Fikrat.tech Inspired) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-wrap items-center justify-center gap-3 pt-4"
+          >
+            <FeatureBadge icon={Zap}>Lightning Fast</FeatureBadge>
+            <FeatureBadge icon={Database}>Multi-Format Support</FeatureBadge>
+            <FeatureBadge icon={Search}>Smart Search</FeatureBadge>
+            <FeatureBadge icon={Code}>Developer First</FeatureBadge>
+          </motion.div>
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +94,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
           >
             <motion.a
-              href="https://lazy-query.vercel.app"
+              href="https://lazy-query-prod.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center space-x-2 group relative"
@@ -118,13 +133,16 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
-            className="mt-16 md:mt-20"
+            className="mt-16 md:mt-20 relative"
           >
+             {/* Particle Glow Effect (New) */}
+             <ParticleGlow />
+
             <motion.div
-              className="product-frame animate-float"
+              className="product-frame animate-float glow-top-border relative z-20"
               whileHover={{ y: -5, transition: { duration: 0.3 } }}
             >
-              <div className="relative aspect-video rounded-lg overflow-hidden">
+              <div className="relative aspect-video rounded-lg overflow-hidden bg-black/20">
                 <Image
                   src="/assets/images/UML.png"
                   alt="LazyQuery Database Schema Visualization"

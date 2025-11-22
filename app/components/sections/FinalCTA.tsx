@@ -84,7 +84,7 @@ export default function FinalCTA({ onOpenWaitlist }: FinalCTAProps) {
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
             >
               <motion.a
-                href="https://lazy-query.vercel.app"
+                href="https://lazy-query-prod.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center space-x-2 group relative"
